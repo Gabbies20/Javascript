@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //Abrir una ventana:
+        const newWindow = window.open('url','Mi Ventana','width=100,height=75');
+
+
+        //Redireccionar a una nueva URL.
+        //window.location.href = 'https://www.nuevourl.com';
+
+
+        //Obtener información sobre el navegador:
+        const navegador = navigator.userAgent;
+        console.log(navegador);
+
+        //Obtener el ancho y alto de la pantalla:
+        const anchoPantalla = window.screen.width;
+        const altoPantalla = window.screen.height;
+        console.log(`Ancho de pantalla: ${anchoPantalla}, Alto de pantalla: ${altoPantalla}`);
+    </script>
+</body>
+</html>

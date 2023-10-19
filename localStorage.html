@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Visitas</title>
+</head>
+<body>
+    <h1>Contador de Visitas</h1>
+    <p>Esta página ha sido visitada <span id="visitas">0</span> veces.</p>
+    
+    <script>
+        // Obtener el valor actual del contador desde el almacenamiento local
+        let contador = localStorage.getItem('visitas');
+
+        // Comprobar si el contador existe en el almacenamiento local
+        if (contador === null) {
+            contador = 0;
+        } else {
+            contador = parseInt(contador);
+        }
+
+        // Incrementar el contador
+        contador++;
+        
+        // Mostrar el contador en la página
+        document.getElementById('visitas').textContent = contador;
+
+        // Almacenar el nuevo valor del contador en el almacenamiento local
+        localStorage.setItem('visitas', contador);
+    </script>
+</body>
+</html>

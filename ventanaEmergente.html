@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ventana de Confirmación</title>
+</head>
+<body>
+    <h1>Ventana de Confirmación</h1>
+    <button id="mostrarConfirmacion">Mostrar Confirmación</button>
+    
+    <script>
+        // Función para mostrar la ventana de confirmación
+        document.getElementById('mostrarConfirmacion').addEventListener('click', function() {
+            const respuesta = window.confirm('¿Estás seguro de continuar?');
+
+            if (respuesta) {
+                alert('El usuario confirmó.');
+            } else {
+                alert('El usuario canceló.');
+            }
+        });
+    </script>
+</body>
+</html>
