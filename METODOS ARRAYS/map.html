@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Método Map de los Arrays</title>
+</head>
+
+<body>
+    <script>
+        const arregloOriginal = [1, 2, 3, 4, 5];
+        const arregloTriplicado = arregloOriginal.map(function (elemento) {
+            return elemento * 3;
+        });
+    </script>
+
+    <!--
+
+
+        Aquí hay una descripción de cómo funciona map():
+
+map() itera sobre cada elemento del arreglo original, de izquierda a derecha, y pasa cada elemento a la función de transformación que proporcionaste.
+
+La función de transformación realiza alguna operación en cada elemento y devuelve un nuevo valor.
+
+Este nuevo valor se almacena en un nuevo arreglo que map() está construyendo.
+
+Cuando todos los elementos del arreglo original se han procesado, map() devuelve el nuevo arreglo resultante con los valores transformados.
+
+
+        const nuevoArreglo = arregloOriginal.map(function(elemento) {
+        // Código de transformación que se aplica a cada elemento
+        return nuevoValor; // Este valor se agregará al nuevo arreglo
+});
+
+    -->
+</body>
+
+</html>
