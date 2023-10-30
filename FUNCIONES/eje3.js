@@ -4,7 +4,7 @@
 
 function numCifras(numero) {
     var cifras = numero.toString();
-    console.log(cifras.length);
+    console.log(...cifras);
 }
 
 numCifras(4569)
