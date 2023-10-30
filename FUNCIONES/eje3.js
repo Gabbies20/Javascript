@@ -8,3 +8,15 @@ function numCifras(numero) {
 }
 
 numCifras(4569)
+
+/**
+ * function numCifras(numero) {
+    const cifras = [...String(numero)];
+    return cifras.length;
+}
+
+const numero = 4569;
+const cantidadDeCifras = numCifras(numero);
+
+console.log(`El número ${numero} tiene ${cantidadDeCifras} cifras.`);
+ */
