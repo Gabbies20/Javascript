@@ -26,3 +26,13 @@ const arreglo2 = [4,5,6];
 
 const arregloCombinado = [...arreglo1,...arreglo2];
 console.log(arregloCombinado);
+
+
+/**
+ * DESCOMPONER UN OBJETO:
+ * Además de los arreglos, el operador de propagación también se puede utilizar para descomponer propiedades de un objeto en otro objeto.Esto es útil para copiar o clonar objetos.
+ */
+
+const objetoOriginal = {a:1,b:2};
+const objetoCopia = {...objetoOriginal,c:3};
+console.log(objetoCopia);
