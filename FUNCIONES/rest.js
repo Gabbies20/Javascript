@@ -18,3 +18,25 @@ Dentro de la función, utilizamos el método reduce() para sumar todos los eleme
 
 El resultado es que la función suma todos los números pasados como argumentos y devuelve 15. El parámetro rest ...números permite que la función acepte un número variable de argumentos sin tener que definir todos los argumentos individualmente en la lista de parámetros de la función. Esto hace que la función sea más flexible y versátil, especialmente cuando no sabes cuántos argumentos se pasarán de antemano.
    */
+ var total = 0; 
+
+function ejemplo(param1,param2,...restParams){
+   for( let i = 0; i < arguments.length; i+=1){
+      var total = arguments[i];
+      //console.log(total)
+   }
+}
+console.log(total)
+
+ejemplo('a','b','c','d','e','f');
+
+
+
+//REST Y SPREAD:
+function ejemplo(param1, param2, ...restParams) {
+   let total = [param1, param2, ...restParams];
+   console.log(total);
+}
+
+ejemplo('a', 'b', 'c', 'd', 'e', 'f');
+
