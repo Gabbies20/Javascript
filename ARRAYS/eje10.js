@@ -8,7 +8,7 @@
            return value % 5 === 0;
       })
 }
-
+[3,4,]
  */
 
 let tripleAndFilter = (arr) => arr.map((value) => value * 3).filter((value) => value % 5 === 0);
