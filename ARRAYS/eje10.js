@@ -71,3 +71,6 @@ console.log(bar('Hola', ' ', 'mundo', '!'));
 /**
  * En esta versión, hemos utilizado una función flecha y el operador rest (...args) para recoger todos los argumentos en un arreglo llamado args. Luego, hemos utilizado el método reduce() para concatenar los elementos del arreglo en una cadena, y hemos inicializado txt como una cadena vacía ('') en el proceso de reducción.
  */
+
+
+

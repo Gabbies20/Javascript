@@ -13,5 +13,12 @@ function sumaArgPares(arr){
   
     return suma;
 }
-
 console.log(sumaArgPares(1, 2, 3, 4, 5, 6));
+
+
+let tripleAndFilter = (arr) => arr.map((value) => value * 3).filter((value) => value % 5 === 0);
+
+var suma = (array)=>array.map((value) => {
+ 
+})
+    
