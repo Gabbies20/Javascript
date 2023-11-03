@@ -1,9 +1,12 @@
 /**
  * Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que el usuario introduzca la cadena vacía. El programa debe guardar los datos en un array bidimensional.
  */
-var array = [];
+
 
 function obtenerDatos() {
+
+    var array = [];
+
     var entrada = prompt('Ingrese su nombre, apellidos, DNI y fecha de nacimiento. \n Separado todo con ",".');
 
     while (entrada !== '') {
@@ -13,32 +16,16 @@ function obtenerDatos() {
 
         entrada = prompt('Ingrese su nombre, apellidos, DNI y fecha de nacimiento. \n Separado todo con ",".');
     }
-    console.log(array);
-}
-
-obtenerDatos();
-
-menuDatos();
-//FUNCION DE MENÚ: 
-function menuDatos(opcion){
-
-    var opcion = prompt('Elija la opcion: ');
-
-    switch (opcion) {
-        case '1':
-
-        buscarDni();
-
-            break;
     
-        default:
-            break;
-    }
+    return array;
 }
+
+var lista = obtenerDatos();
+
 /**
  * Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda?
- * 
- * function buscarPorApellidos(apellido) {
+ */
+ /* function buscarPorApellidos(apellido) {
     var resultados = [];
 
     for (var i = 0; i < array.length; i++) {
@@ -52,7 +39,7 @@ function menuDatos(opcion){
  */
 
 //FUNCION DE BUSCAR APELLIDO:
-function buscarApellido(apellido){
+function buscarApellido(array,apellido){
     var resultado = array.find(function(elemento){
         return elemento.length >=2 && elemento[1] === apellido;
     });
@@ -60,7 +47,7 @@ function buscarApellido(apellido){
     return resultado;
 }
 var apellidoABuscar = prompt('Ingrese los apellidos que desea buscar:');
-var resultadosBusqueda = buscarApellido(apellidoABuscar);
+var resultadosBusqueda = buscarApellido(lista,apellidoABuscar);
 
 if (resultadosBusqueda) {
     console.log('El apellido que busca pertenece al usuario:');
@@ -70,7 +57,7 @@ if (resultadosBusqueda) {
 }
 
 //FUNCION DE BUSCAR DNI:
-function buscarDni(dni){
+function buscarDni(array,dni){
     var resultado = array.find(function(elemento){
         return elemento.length >=2 && elemento[2] === dni;
     });
@@ -78,7 +65,7 @@ function buscarDni(dni){
     return resultado;
 }
 var dniABuscar = prompt('Ingrese el dni que desea buscar:');
-var resultadoDni = buscarDni(dniABuscar);
+var resultadoDni = buscarDni(lista,dniABuscar);
 
 if (resultadoDni) {
     console.log('El dni que busca pertenece al usuario:');
