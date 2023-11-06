@@ -18,7 +18,6 @@ function obtenerDatos() {
     return array;
 }
 
-var lista = obtenerDatos();
 
 /**
  * Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda?
@@ -74,7 +73,7 @@ if (resultadoDni) {
 
 
 
-
+//FUNCION BUSCAR EDAD:
 /**
  * 
  * var array = [];

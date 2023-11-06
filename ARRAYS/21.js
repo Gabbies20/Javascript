@@ -7,15 +7,23 @@ eliminaUsuario: elimina un usuario del array solicitando su dni. Además solicit
  */
 
 var matriz = obtenerDatos();
+console.log(matriz)
 
-function calcularEdad(m){
-    for (let index = 0; index < m.length; index++) {
-        const element = m[index];
-        console.log(element);
-    }
+function calcularEdad(edad) {
 
+    var fecha = new Date(edad);
+    var fechaHoy = new Date();
 
+    //Obtener los milisegundos:
+    var m = fecha.getTime();
+    var m2 = fechaHoy.getTime();
+
+    var total = m2 - m;
+
+    //Calcular los años:
+    var milisegundos = 24 * 60 * 60 * 1000;
+    var year = Math.floor((total / milisegundos) / 365);
+    return year;
 }
-
-var resultado = calcularEdad(matriz);
-console.log(resultado);
+var edad = calcularEdad(matriz,edad);
+console.log(edad);
