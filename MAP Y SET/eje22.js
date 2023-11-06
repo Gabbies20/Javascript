@@ -38,3 +38,8 @@ document.write(consulta)
 
 //Si esta eliminalo:
 modulos.delete('DAW');
+
+//Ordena alfabéticamente el map según las abreviaturas de los módulos:
+//1. Para ordenarlo debemos pasarlo array.
+console.log(...modulos);
+console.log(modulos.sort());
