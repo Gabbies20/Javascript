@@ -46,6 +46,14 @@ const sumaTotalAlumnos = modulos.reduce((suma, modulo) => {
   console.log("Número total de alumnos matriculados en todos los módulos:", sumaTotalAlumnos);
   
 
+//FOR OF:
+let sumTotalAlumnos = 0;
+
+for (const modulo of modulos) {
+    sumTotalAlumnos += modulo.num_alumnos;
+}
+
+console.log("Número total de alumnos matriculados en todos los módulos:", sumTotalAlumnos);
 
 
 
