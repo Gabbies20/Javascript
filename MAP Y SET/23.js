@@ -11,6 +11,7 @@ const modulos = [
     {siglas:'DIW',nombre:'Diseño de Interfaces Web',duracion: 6,num_alumnos:8},
 ]
 
+console.log(modulos);
 
 const buscar_modulo = modulos.find((modulo)=>{
    if(modulo.siglas === 'DIW'){

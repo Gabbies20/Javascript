@@ -41,9 +41,22 @@ modulos.delete('DAW');
 
 //Ordena alfabéticamente el map según las abreviaturas de los módulos:
 //1. Para ordenarlo debemos pasarlo a array.
-console.log(...modulos);
-console.log(modulos.sort());
 
+/**
+ * FUNCIONAMIENTO SORT:
+ * [3,2,5,7]
+ * 3-2 > 0 entonces a > b 
+ * 3-5 < 0 entonces a < b
+ * 
+*/
+//console.log(modulos.sort());
 
+const arrayNuevo = [...modulos];
+const ordenarArrays = arrayNuevo.sort((a, b) => {
+  if (a[0] < b[0]) return -1;
+  if (a[0] > b[0]) return 1;
+  return 0;
+});
+console.log(`El orden es: ${ordenarArrays}`);
 
   
