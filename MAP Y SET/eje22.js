@@ -60,3 +60,40 @@ const ordenarArrays = arrayNuevo.sort((a, b) => {
 console.log(`El orden es: ${ordenarArrays}`);
 
   
+/**
+ * const modulos = new Map();
+modulos.set('DWC', 'Desarrollo Web Cliente')
+  .set('DWS', 'Desarrollo Web Servidor')
+  .set('DIW', 'Desarrollo de Interfaces Web')
+  .set('EyE', 'Empresa e iniciativa Emprendedora');
+
+const arrayNuevo = [...modulos];
+const ordenarArrays = arrayNuevo.sort((a, b) => a[0].localeCompare(b[0]));
+
+console.log(`El orden es: ${JSON.stringify(ordenarArrays)}`);
+
+
+
+
+
+const modulos = new Map();
+modulos.set('DWC', 'Desarrollo Web Cliente')
+  .set('DWS', 'Desarrollo Web Servidor')
+  .set('DIW', 'Desarrollo de Interfaces Web')
+  .set('EyE', 'Empresa e iniciativa Emprendedora');
+
+const arrayNuevo = [...modulos];
+const ordenarArrays = arrayNuevo.sort((a, b) => {
+  if (a[0] < b[0]) return -1;
+  if (a[0] > b[0]) return 1;
+  return 0;
+});
+
+console.log(`El orden es: ${JSON.stringify(ordenarArrays)}`);
+
+
+
+
+
+
+ */
