@@ -19,7 +19,7 @@ class Punto{
             }else if(this.x < 0 && this.y < 0){
                 return (`El punto se encuentra en el tercer cuadrante.`)
             }else {
-                return(`El punto se encunetra en el cuarto cuadrante.`)
+                return(`El punto se encuntnra en el cuarto cuadrante.`)
             }
         }
     }
@@ -28,6 +28,14 @@ class Punto{
 
 var coordenada = new Punto(-7,-7);
 console.log(coordenada.averiguarCuadrante());
+
+
+
+
+
+
+
+
 
 
 
