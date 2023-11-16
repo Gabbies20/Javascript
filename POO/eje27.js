@@ -13,9 +13,20 @@ var p4 = new Persona('Marina','V','12345678P','02/02/2002');
 var personas = [p1,p2,p3,p4];
 console.log(personas);
 
-buscarApellido(apellido){
+function buscarApellido(apellido){
     var resultado = personas.find((e)=> e.apellidos === apellido);
     return resultado;
 }
 
+
+function buscarDNI(dni){
+    var resultado = personas.find((e) => e.dni === dni);
+    return resultado;
+}
+var personaEncontrada = buscarApellido('M'); //Te devolverá undefinded si no ha encontrada nada.
+console.log(personaEncontrada);
+
+
+var personaDNI = buscarDNI('77978285M');
+console.log(personaDNI);
 
