@@ -1,9 +1,11 @@
 /**
  * Hacer un programa en el que el usuario que introduzca, nombre, apellidos, DNI y fecha de nacimiento separado por comas. Esta entrada de datos se repetirá hasta que el usuario introduzca la cadena vacía. El programa debe guardar los datos en un array bidimensional.
  */
-var array = [];
+
 
 function obtenerDatos() {
+    var array = [];
+
     var entrada = prompt('Ingrese su nombre, apellidos, DNI y fecha de nacimiento. \n Separado todo con ",".');
 
     while (entrada !== '') {
@@ -13,28 +15,10 @@ function obtenerDatos() {
 
         entrada = prompt('Ingrese su nombre, apellidos, DNI y fecha de nacimiento. \n Separado todo con ",".');
     }
-    console.log(array);
+    return array;
 }
 
-obtenerDatos();
 
-menuDatos();
-//FUNCION DE MENÚ: 
-function menuDatos(opcion){
-
-    var opcion = prompt('Elija la opcion: ');
-
-    switch (opcion) {
-        case '1':
-
-        buscarDni();
-
-            break;
-    
-        default:
-            break;
-    }
-}
 /**
  * Implementar funciones para el ejercicio anterior para imprimir los datos y para buscar una persona por apellidos, por DNI o por edad. ¿cómo podríamos optimizar la búsqueda?
  * 
@@ -138,3 +122,6 @@ obtenerDatos();
 menuDatos();
 
  */
+obtenerDatos();
+
+menuDatos();
