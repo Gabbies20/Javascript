@@ -13,6 +13,7 @@ class Persona{
     }
 
     imprimirDatos(){
-        document.write(`Los datos de la persona ${this.nombre} ${this.apellidos} son: DNI ${this.dni} y fecha de nacimiento ${this.fecha_nacimiento}`);
+        document.write(`Los datos de ${this.nombre} ${this.apellidos} son: DNI ${this.dni} y fecha de nacimiento ${this.fecha_nacimiento}`);
     }
 }
+
