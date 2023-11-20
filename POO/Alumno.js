@@ -10,15 +10,43 @@ class Alumno extends Persona {
     }
 
     imprimirAlumno() {
-        document.write(`${this.imprimirDatos()}, sus notas son ${this.notas} y su curso es ${curso}.`);
         let notas = '';
-        n.forEach(function (valor, clave) {
+        this.notas.forEach(function (valor, clave) {
             notas += clave + '=' + valor + '<br>'
         })
+        document.write(`${this.imprimirDatos()}, su curso es ${this.curso} y sus notas son: ${notas}.`);
+        
     }
 
     notaMedia() {
 
+        let suma = 0;
+        let divisor = 0;
+        this.notas.forEach(function(nota){
+            suma+= nota;
+            divisor++;
+        })
+
+        /**
+         * if (count === 0) {
+            return 0; // Evitar división por cero
+        }
+         */
+
+        return `La nota media del alumno es ${suma/divisor}`
     }
 
+    obtenerMejorNota() {
+        let mejorNota = -1;
+        let mejorModulo = '';
+
+        this.notas.forEach(function (valor, clave) {
+            if (valor > mejorNota) {
+                mejorNota = valor;
+                mejorModulo = clave;
+            }
+        });
+
+        return { modulo: mejorModulo, nota: mejorNota };
+    }
 }

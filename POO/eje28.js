@@ -22,12 +22,14 @@ console.log(notas);
 
 var n = new Map([['DWES',5],['DWEC',8],['DIW',7],['Empresa',6],['DAW',10]]);
 
-let notas = '';
-n.forEach(function(valor,clave){
-    notas += clave + '=' + valor +'<br>'
-})
 
+var alumno = new Alumno('Manuel','Guerrero','12345678L','25/06/2001',curso,n);
 
+// Llamar al método imprimirAlumno para ver la información del alumno
+alumno.imprimirAlumno();
 
-var o_alumno = new Alumno('Manuel','Guerrero','12345678L','25/06/2001',notas);
-console.log(o_alumno.imprimirAlumno());
+// Llamar al método notaMedia y mostrar el resultado
+console.log(alumno.notaMedia());
+
+// Llamar al método obtenerMejorNota y mostrar el resultado
+console.log(alumno.obtenerMejorNota());
