@@ -20,16 +20,16 @@ for(let v of valores){
 console.log(notas);
  */
 
-var n = new Map([['DWES',5],['DWEC',8],['DIW',7],['Empresa',6],['DAW',10]]);
+var n = new Map([['DWES',5],['DWEC',8],['DIW',10],['Empresa',6],['DAW',10]]);
 
 
 var alumno = new Alumno('Manuel','Guerrero','12345678L','25/06/2001',curso,n);
 
 // Llamar al método imprimirAlumno para ver la información del alumno
-alumno.imprimirAlumno();
+//alumno.imprimirAlumno();
 
 // Llamar al método notaMedia y mostrar el resultado
-console.log(alumno.notaMedia());
+//console.log(alumno.notaMedia());
 
 // Llamar al método obtenerMejorNota y mostrar el resultado
 console.log(alumno.obtenerMejorNota());

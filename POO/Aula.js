@@ -1,8 +1,45 @@
 class Aula{
-    constructor(alumno){
-        this.alumno = alumno;
+    constructor(alumnos){
+        this.alumnos = alumnos;
+    }
+
+    buscarDni(dni){
+        var resultado = this.alumnos.find((al)=>al.dni===dni);
+        return resultado;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /**

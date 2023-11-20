@@ -37,6 +37,52 @@ class Alumno extends Persona {
     }
 
     obtenerMejorNota() {
+        let mejorNota = 0;
+        let nombreA = '';
+
+        let lista = [...this.notas.values()];
+        console.log(`Maximo:${Math.max(...lista)}`);
+
+        let resultado = [...this.notas].filter(function (k){
+            if(k[1] >= lista){
+                lista = k[1];
+                nombreA = k[0];
+                return k;
+            }
+            
+        });
+        
+        return resultado;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ *  obtenerMejorNota() {
         let mejorNota = -1;
         let mejorModulo = '';
 
@@ -49,4 +95,4 @@ class Alumno extends Persona {
 
         return { modulo: mejorModulo, nota: mejorNota };
     }
-}
+ */
