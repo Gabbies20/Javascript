@@ -11,25 +11,35 @@ B. Nombre de piloto.
 
 Añade una función para añadir al array una sesión de calificación nueva, en caso de que no exista una sesión para ese piloto y en caso de exista, si el tiempo el nuevo tiempo es menor, se modificará el tiempo en la sesión que ya existe en el array  y otra para eliminar del array (hay que comprobar que existe, crea una función para ello).
  */
-
-
 var piloto1 = new Piloto('Manuel','Red Bull ');
 var piloto2 = new Piloto('Gabriela','Ferrari ');
-var piloto3 = new Piloto('Diana','Mercedes ');
+var piloto3 = new Piloto('Diana','Mercedes');
 var piloto4 = new Piloto('Irene','Aston');
 
-var sesion = new Sesion(piloto1, 10.2);
-
+var sesion1 = new Sesion(piloto1, 10.2);
 
 var sesionesC = [];
+
+
 //sesionesC.push(piloto1);
 console.log(sesionesC);
 console.log(sesion);
 
 
+function añadirSesion(sesion,lista){
+    
+    var resultado = lista.find((sesion)=>sesion.piloto.nombre==sesion.piloto.nombre);
 
-function añadirSesion(){
+    if(sesion.tiempo < resultado.tiempo){
+        
+        
+    }
+    //sesionesC.push();
+}
 
+
+
+function eliminarSesion(sesion,lista){
 
 }
 
