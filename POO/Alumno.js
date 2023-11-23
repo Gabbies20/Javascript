@@ -35,16 +35,18 @@ class Alumno extends Persona {
 
         return `La nota media del alumno es ${suma/divisor}`
     }
-
+    
     obtenerMejorNota() {
         let mejorNota = 0;
         let nombreA = '';
 
         let lista = [...this.notas.values()];
-        console.log(`Maximo:${Math.max(...lista)}`);
+        console.log(`La lista es: ${lista}`);
+
+        let l = Math.max(...lista);
 
         let resultado = [...this.notas].filter(function (k){
-            if(k[1] >= lista){
+            if(k[1] >= l){
                 lista = k[1];
                 nombreA = k[0];
                 return k;
@@ -54,45 +56,25 @@ class Alumno extends Persona {
         
         return resultado;
     }
+
+    
+
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- *  obtenerMejorNota() {
-        let mejorNota = -1;
+    /**
+     * obtenerMejorNota() {
+        let mejorNota = 0;
         let mejorModulo = '';
 
-        this.notas.forEach(function (valor, clave) {
-            if (valor > mejorNota) {
+        let lista = [...this.notas.values()];
+
+        lista.filter(function (valor, clave) {
+            if (valor >= mejorNota) {
                 mejorNota = valor;
                 mejorModulo = clave;
             }
         });
 
-        return { modulo: mejorModulo, nota: mejorNota };
+        return {mejorNota,mejorModulo};
     }
- */
+     */

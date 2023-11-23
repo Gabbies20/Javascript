@@ -29,7 +29,9 @@ var alumno = new Alumno('Manuel','Guerrero','12345678L','25/06/2001',curso,n);
 //alumno.imprimirAlumno();
 
 // Llamar al método notaMedia y mostrar el resultado
-//console.log(alumno.notaMedia());
+console.log(`La nota media es ${alumno.notaMedia()}`);
 
 // Llamar al método obtenerMejorNota y mostrar el resultado
-console.log(alumno.obtenerMejorNota());
+var resultado = alumno.obtenerMejorNota();
+console.log(resultado);
+

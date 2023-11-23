@@ -5,11 +5,45 @@ class Aula{
 
     buscarDni(dni){
         var resultado = this.alumnos.find((al)=>al.dni===dni);
-        return resultado;
+        return {
+            toString: () => resultado ? `Nombre: ${resultado.nombre}, DNI: ${resultado.dni}` : 'Alumno no encontrado'
+        };
+
+
+        /**
+         * return {
+            toString: () => resultado ? `Nombre: ${resultado.nombre}, DNI: ${resultado.dni}` : 'Alumno no encontrado'
+        };
+         */
+
+    }
+    ordenarNota(alumno){
+        var resultado = [...alumno.notas.values()];
+        return resultado.sort()
     }
 }
 
+/**
+ * 
+ * 
+ * TOSTRING():
+ * En JavaScript, toString es un método que se llama automáticamente cuando se intenta representar un objeto como una cadena. Cuando haces algo como console.log(objeto), internamente se llama a objeto.toString() para obtener una representación en cadena del objeto.
+ * 
+ * 
+ * 
+ * En tu caso, return { toString: () => ' códIGO' };
+ está creando un objeto *con una propiedad llamada toString, y el valor de esa propiedad es una función *de flecha. El código dentro de la función de flecha define el comportamiento del *método toString. Es decir, cada vez que se llama a toString en el objeto *retornado, se ejecuta el código dentro de la función de flecha.
+ const objeto = {
+    valor: 42,
+    toString: function() {
+        return `El valor es: ${this.valor}`;
+    }
+};
 
+console.log(objeto.toString());  // Imprime: "El valor es: 42"
+
+ *
+ */
 
 
 
