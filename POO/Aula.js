@@ -7,6 +7,10 @@ class Aula{
         var resultado = this.alumnos.find((al)=>al.dni===dni);
         return resultado;
     }
+    
+    ordenarNota(){
+        
+    }
 }
 
 
