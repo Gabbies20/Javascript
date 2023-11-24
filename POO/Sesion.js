@@ -5,8 +5,4 @@ class Sesion{
     }
     
 
-    modificar(tiempo){
-        this.tiempo = tiempo;
-    }
-
 }

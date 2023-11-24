@@ -15,34 +15,76 @@ var piloto1 = new Piloto('Manuel','Red Bull ');
 var piloto2 = new Piloto('Gabriela','Ferrari ');
 var piloto3 = new Piloto('Diana','Mercedes');
 var piloto4 = new Piloto('Irene','Aston');
+var piloto5 = new Piloto('Alvaro','Red Bull');
 
-var sesion1 = new Sesion(piloto1, 10.2);
-
+var sesion1 = new Sesion(piloto1,100);
+var sesion2 = new Sesion(piloto1,50);
+var sesion3 = new Sesion(piloto2,25);
+var sesion4 = new Sesion(piloto4,400);
+var sesion5 = new Sesion(piloto5,100);
 var sesionesC = [];
 
 
 //sesionesC.push(piloto1);
-console.log(sesionesC);
-console.log(sesion);
+//console.log(sesionesC);
+//console.log(sesion);
 
 
-function añadirSesion(sesion,lista){
+//console.log(sesionesC);
+
+function añadirSesion(sesion){
     
-    var resultado = lista.find((sesion)=>sesion.piloto.nombre==sesion.piloto.nombre);
-
-    if(sesion.tiempo < resultado.tiempo){
-        
-        
+    var resultado = sesionesC.find((e)=>e.piloto.nombre==sesion.piloto.nombre);
+    
+    if (resultado){
+        if(sesion.tiempo < resultado.tiempo){
+            sesionesC.splice(sesionesC.indexOf(resultado), 1, sesion);
+        }
+    }else{
+        sesionesC.push(sesion);
     }
-    //sesionesC.push();
 }
 
 
+function eliminarSesion(sesion){
 
-function eliminarSesion(sesion,lista){
+    var resultado = sesionesC.find((e) => e == sesion);
+    if(resultado){
+        sesionesC.splice(sesionesC.indexOf(resultado),1);
+    }else{
+        console.log(`La sesion no existe.`);
+    }
 
 }
 
+function ordenarTiempos(lista){
+    return (lista.sort((a,b)=> b.tiempo - a.tiempo ));
+}
+
+function oredenarNombres(lista){
+    return (lista.sort((a,b) => {
+        if(a.piloto.nombre < b.piloto.nombre){
+            return -1;
+        }
+        if(a.piloto.nombre > b.piloto.nombre){
+            return 1;
+        }
+    }));
+
+    /**
+     * ((a,b)=>a.piloto.nombre.localCompare(b.piloto.nombre))
+     */
+}
+
+añadirSesion(sesion1);
+añadirSesion(sesion2);
+añadirSesion(sesion3);
+añadirSesion(sesion5);
+console.log(sesionesC);
+
+//console.log(eliminarSesion(sesion4));
+console.log(ordenarTiempos(sesionesC));
+console.log(oredenarNombres(sesionesC));
 //Ordenar el array de sesiones de calificaciones por tiempos y nombres:
 
 
