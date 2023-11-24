@@ -21,6 +21,10 @@ class Aula{
         var resultado = [...alumno.notas.values()];
         return resultado.sort()
     }
+    
+    ordenarNota(){
+        
+    }
 }
 
 /**
