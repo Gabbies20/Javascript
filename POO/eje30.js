@@ -58,10 +58,10 @@ function eliminarSesion(sesion){
 }
 
 function ordenarTiempos(lista){
-    return (lista.sort((a,b)=> b.tiempo - a.tiempo ));
+    return lista.sort((a,b)=> a.tiempo - b.tiempo );
 }
 
-function oredenarNombres(lista){
+function ordenarNombres(lista){
     return (lista.sort((a,b) => {
         if(a.piloto.nombre < b.piloto.nombre){
             return -1;
@@ -79,12 +79,36 @@ function oredenarNombres(lista){
 añadirSesion(sesion1);
 añadirSesion(sesion2);
 añadirSesion(sesion3);
+añadirSesion(sesion4);
 añadirSesion(sesion5);
+console.log("Sesiones antes de eliminar y ordenar:");
 console.log(sesionesC);
 
-//console.log(eliminarSesion(sesion4));
-console.log(ordenarTiempos(sesionesC));
-console.log(oredenarNombres(sesionesC));
-//Ordenar el array de sesiones de calificaciones por tiempos y nombres:
+eliminarSesion(sesion4);
+
+console.log("Sesiones después de eliminar:");
+console.log(sesionesC);
+
+console.log("Sesiones ordenadas por tiempos:");
+var nuevo = ([...sesionesC]);
+console.log(nuevo);
+console.log(ordenarTiempos(sesionesC));  // Usar un clon para no modificar el array original
+
+console.log("Sesiones ordenadas por nombres:");
+console.log(ordenarNombres(nuevo));  // Usar un clon para no modificar el array original
 
 
+
+document.write("Sesiones antes de eliminar y ordenar:<br>");
+document.write(JSON.stringify(sesionesC) + "<br>");
+
+eliminarSesion(sesion4);
+
+document.write("Sesiones después de eliminar:<br>");
+document.write(JSON.stringify(sesionesC) + "<br>");
+
+document.write("Sesiones ordenadas por tiempos:<br>");
+document.write(JSON.stringify(ordenarTiempos([...sesionesC])) + "<br>");
+
+document.write("Sesiones ordenadas por nombres:<br>");
+document.write(JSON.stringify(ordenarNombres([...sesionesC])) + "<br>");
