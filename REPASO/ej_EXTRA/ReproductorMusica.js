@@ -5,24 +5,42 @@ class ReproductorMusica{
     }
 
     aumentaVolumen(){
-
+        this.volumen++;
+        return alert(`Subiendo volumen, su volumen actual es de: ${this.volumen}`);
     }
 
     disminuyeVolumen(){
-
+        this.volumen--;
+        return alert(`Bajando volumen, su volumen ahora es de ${this.volumen}`);
     }
 
-    añadeCancion(){
+    añadeCancion(cancion){
+
+        var r = this.canciones.find((e) =>{
+            e.titulo === cancion.titulo;
+            console.log(r);
+        });
+
+
+        if(!r){
+            this.canciones.push(cancion);
+        }else{
+            document.write(`La canción ya existe en este dispositivo. <br>`)
+        }
 
     }
 
     eliminaCancion(){
 
-    }
+    }   
+
+
 
     mostrarLista(){
-        var lista = this.canciones.forEach(cancion => {
-            console.log(`Nombre: ${cancion.titulo}, Artista: ${cancion.interprete}`);
+
+        document.write(`---LISTA CANCIONES--- <br>`)
+        this.canciones.forEach(cancion => {
+            document.write(`Nombre: ${cancion.titulo}, Artista: ${cancion.interprete} <br>`);
     });
     }
 
@@ -37,5 +55,6 @@ class ReproductorMusica{
     ordenarCancionDesc(){
 
     }
+
 
 }

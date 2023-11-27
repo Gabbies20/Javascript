@@ -23,19 +23,50 @@ ordenarCancionDesc(): que ordenará la lista de canciones por el título de canc
 En el archivo html realiza una prueba donde se compruebe el funcionamiento del objeto reproductor y sus métodos. La lista de canciones-interpretes inicial será pedida por pantalla separadas por coma (A Perfect Day, Lou Reed) y se parará cuando se introduzca la palabra “salir”.
  */
 
-var canciones = prompt('Ingrese el nombre de la cancion y seguido a está con un (,) el nombre de su autor:');
+var cancion = prompt('Ingrese el nombre de la cancion y seguido a está con un (,) el nombre de su autor:');
 var lista = [];
 
-while(canciones != 'salir'){
-    canciones = prompt('Ingrese el nombre de la cancion y seguido a está con un (,) el nombre de su autor:');
-    lista.push(canciones);
+while(cancion != 'salir'){
+    
+    var n_cancion = (cancion.split(','));
+    let titulo = n_cancion[0];
+    let interprete = n_cancion[1];
+
+    lista.push(new Cancion(titulo,interprete));
+
+
+    cancion = prompt('Ingrese el nombre de la cancion y seguido a está con un (,) el nombre de su autor:');
+    
 
 }
 
 console.log(lista);
 
+//Creo un objeto Reproductor de Música:
 var r = new ReproductorMusica(lista,20);
+
+//Llamó al método para aumentar volumen.
+r.aumentaVolumen();
+
+//Llamó al método para bajar volumen.
+r.disminuyeVolumen();
+
+//Creo un objeto canción para añadirla.
+var c = new Cancion('Camaron','Estopa');
+r.añadeCancion(c);
+r.añadeCancion(c);
+
+//Llamó al método para mostrar toda la Lista de Canciones:
 console.log(r.mostrarLista());
+
+
+
+
+
+
+
+
+
 
 
 /**

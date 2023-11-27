@@ -6,6 +6,8 @@ class Cancion{
 
 
     mostrarCancion(){
-        
+        let cadena = '';
+        cadena += this.titulo + "-" +this.interprete;
+        return cadena;
     }
 }
