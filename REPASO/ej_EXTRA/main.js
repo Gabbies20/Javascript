@@ -53,15 +53,31 @@ r.disminuyeVolumen();
 
 //Creo un objeto canción para añadirla.
 var c = new Cancion('Camaron','Estopa');
+var c1 = new Cancion('Guajiro','Ayax')
 r.añadeCancion(c);
 r.añadeCancion(c);
 
-//Llamó al método para mostrar toda la Lista de Canciones:
+//Llamo al método para eliminar una canción:
+r.eliminaCancion(c1);
+
+
+//Llamo al método para mostrar toda la Lista de Canciones:
 console.log(r.mostrarLista());
+r.eliminaCancion(c);
+console.log(r.mostrarLista());
+//Lamo al metodo pra mostrar el volumen:
+console.log(r.mostrarVolumen());
 
 
+//Llamo al método de buscar canción:
+console.log(r.buscarCancion(c1));
+
+//Llamo al método ordenar canciones:
+r.ordenarCancionDesc();
 
 
+console.log("\nLista de canciones después de ordenar de forma descendente:");
+r.mostrarLista();
 
 
 
