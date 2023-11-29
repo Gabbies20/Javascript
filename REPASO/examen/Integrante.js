@@ -5,5 +5,9 @@ class Integrante {
         this.apellidos = apellidos;
     }
 
+    getNombre() {
+        return this.nombre;
+    }
+
     
 }

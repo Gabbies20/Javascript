@@ -18,18 +18,24 @@ class Banda {
         return cadena;
     }
 
-    mostrarIntegrantes() {
-
-        let cadena = '';
-
-        //Intentará concatenar un arrays de objetos
-        this.lista.forEach( (e)=> {
-
-            cadena += `${e.nombre}`
-
+    mostrarIntegrantes(){
+        document.write("Miembros de la banda ' " + this.getNombre() +  "' <br>")
+        this.lista.forEach(element => {
+            document.write(`${element.nombre} `);
         });
-
-        return cadena;
-
     }
+
+    getNombre(){
+        return this.nombre;
+    }
+
+    getEstilo(){
+        return this.estilo;
+    }
+
+    getAnio(){
+        return this.anioFormacion;
+    }
+
+
 }
