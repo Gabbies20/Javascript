@@ -12,11 +12,11 @@ var regex = /^.{7}$/;
 var nombres = [];
 
 //Funcion que solita el nombre al usuario.
-function solicitarNombreUsuario(){
-    let n_usuario ;
-    do{
+function solicitarNombreUsuario() {
+    let n_usuario;
+    do {
         n_usuario = prompt('Ingrese su nombre de usuario: ');
-    }while(!regex.test(n_usuario));
+    } while (!regex.test(n_usuario));
 
     nombres.push(n_usuario);
     return n_usuario;
@@ -28,17 +28,40 @@ console.log(nombres);
 
 
 //Funcion que me calcula la cantidad de digitos que contiene el nombre de usuario.
-function numeroDigitos(nombre){
+function numeroDigitos(nombre) {
     let regex = /\d/g;
     var caracteres = nombre.match(regex);
-    
+
 
     return caracteres;
 }
+var cantidadDigitos = numeroDigitos(n_usuario);
+cantidadDigitos = (cantidadDigitos.length);
+
 
 console.log(numeroDigitos(n_usuario));
 
+let ventana;
+let id;
 
+
+id = setInterval(() => {
+
+    ventana = window.open('', '', 'width=50, height=50, right= 0, bottom=0');
+    ventana.document.write(`"Hola ${n_usuario} <br>
+                                Aquí tienes el producto del año. <br>
+                                Atrévete a probarlo."`);
+
+    cantidadDigitos--;
+
+    //Para detener ejecución:
+    if (cantidadDigitos <= 0) {
+        clearInterval(id);
+    }
+
+
+
+}, 3000);
 
 
 
