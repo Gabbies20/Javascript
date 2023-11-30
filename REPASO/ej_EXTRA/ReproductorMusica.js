@@ -45,7 +45,7 @@ class ReproductorMusica{
 
     mostrarLista(){
 
-        document.write(`---LISTA CANCIONES--- <br>`)
+        //document.write(`---LISTA CANCIONES--- <br>`)
         this.canciones.forEach(cancion => {
             document.write(`Título: ${cancion.titulo}, Interprete: ${cancion.interprete} <br>`);
     });

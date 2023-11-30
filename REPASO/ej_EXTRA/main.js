@@ -62,16 +62,28 @@ r.eliminaCancion(c1);
 
 
 //Llamo al método para mostrar toda la Lista de Canciones:
+document.write(`--LISTA DE CANCIONES--- <br>`);
 console.log(r.mostrarLista());
+document.write(`<hr>`)
+
+
+document.write(`---LISTA DE CANCIONES DESPUÉS DE ELIMINAR---<br>`);
 r.eliminaCancion(c);
 console.log(r.mostrarLista());
+document.write(`<hr>`);
+
+
 //Lamo al metodo pra mostrar el volumen:
 console.log(r.mostrarVolumen());
+document.write(`<hr>`);
+
 
 
 //Llamo al método de buscar canción:
 console.log(r.buscarCancion(c1));
 
+
+document.write(`---LISTA DE CANCIONES ORDENADAS-- <br>`);
 //Llamo al método ordenar canciones:
 r.ordenarCancionDesc();
 

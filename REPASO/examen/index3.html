@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Usuario</title>
+    <style>
+        /* Estilos para el pop-up */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    function solicitarNombreUsuario() {
+        let nombreUsuario;
+        do {
+            nombreUsuario = prompt("Por favor, ingresa un nombre de usuario con exactamente 7 caracteres:");
+        } while (nombreUsuario.length !== 7);
+
+        return nombreUsuario;
+    }
+
+    function mostrarPopup(mensaje) {
+        const popup = document.createElement("div");
+        popup.className = "popup";
+        popup.textContent = mensaje;
+
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            popup.remove();
+        }, 5000);
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const nombreUsuario = solicitarNombreUsuario();
+
+        for (let i = 0; i < nombreUsuario.length; i++) {
+            const mensajePopup = `Hola ${nombreUsuario}. Aquí tienes el producto del año. Atrévete a probarlo!!`;
+            mostrarPopup(mensajePopup);
+        }
+    });
+</script>
+
+</body>
+</html>
