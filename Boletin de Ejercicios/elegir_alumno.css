@@ -1,0 +1,50 @@
+#my_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    
+}
+
+#my_grid div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    width: 100%;
+    height: 100px;
+    
+}
+
+
+
+  
+.anima_alumno {
+    animation-name: alumno;
+    animation-duration: 0.8s;
+  
+  }
+
+  .anima_victoria {
+    animation-name: victoria;
+    animation-duration: 0.2s;
+    animation-iteration-count: infinite;
+  
+  }
+
+  @keyframes alumno{
+    0%{background-color: white;}
+    50%{background-color: brown;}
+    100%{background-color: white;}
+  }
+  
+
+  @keyframes victoria{
+ 
+
+    0%{background-color: blanchedalmond; transform:rotate(0deg) translateX(0%) scale(100%);}
+    25%{background-color: red; transform:rotate(15deg) translateX(50%) scale(200%);}
+    50%{background-color: blue; transform:rotate(0deg) translateX(0%) scale(100%);}
+    75%{background-color: orange; transform:rotate(-15deg) translateX(-50%) scale(200%);}
+    100%{background-color: green;  transform:rotate(0deg) translateX(0%) scale(100%);}
+  }
+  
