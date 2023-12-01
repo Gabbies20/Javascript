@@ -31,7 +31,4 @@ function inicio(){
         document.getElementById("edad").innerHTML= edad
     }
 
-
-
-
 }
