@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Envío</title>
+</head>
+<body>
+    <h1>Dirección de Envío</h1>
+    <form id="addressForm">
+        <label for="direccion">Dirección de Envío:</label>
+        <input type="text" id="direccion" required>
+
+        <br><br>
+        <button type="button" onclick="guardarDireccion()">Guardar Dirección</button>
+    </form>
+
+    <script>
+        // Función para guardar la dirección en una cookie
+        function guardarDireccion() {
+            var direccion = document.getElementById("direccion").value;
+
+            // Crear una cookie para recordar la dirección del usuario
+            document.cookie = "direccion=" + encodeURIComponent(direccion);
+
+            alert("Dirección guardada correctamente: " + direccion);
+        }
+
+        // Función para cargar la dirección almacenada en la cookie al cargar la página
+        window.onload = function() {
+            var direccionGuardada = obtenerCookie("direccion");
+
+            if (direccionGuardada) {
+                document.getElementById("direccion").value = direccionGuardada;
+            }
+        };
+
+        // Función para obtener el valor de una cookie específica
+        function obtenerCookie(nombre) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(nombre + '=')) {
+                    return decodeURIComponent(cookie.substring(nombre.length + 1));
+                }
+            }
+            return null;
+        }
+    </script>
+</body>
+</html>

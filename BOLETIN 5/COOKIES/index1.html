@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Café</title>
+</head>
+<body>
+    <h1>Orden de Café</h1>
+    <form id="coffeeForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="habitacion">Número de Habitación:</label>
+        <input type="text" id="habitacion" required>
+
+        <p>Seleccione su tipo de café favorito:</p>
+        <input type="checkbox" id="espresso" name="cafe" value="Espresso">
+        <label for="espresso">Espresso</label>
+
+        <input type="checkbox" id="cappuccino" name="cafe" value="Cappuccino">
+        <label for="cappuccino">Cappuccino</label>
+
+        <input type="checkbox" id="moka" name="cafe" value="Moka">
+        <label for="moka">Moka</label>
+
+        <!-- Agrega más tipos de café según sea necesario -->
+
+        <br><br>
+        <button type="button" onclick="ordenarCafe()">Ordenar Café</button>
+    </form>
+
+    <script>
+        function ordenarCafe() {
+            // Obtener los valores del formulario
+            var nombre = document.getElementById("nombre").value;
+            var habitacion = document.getElementById("habitacion").value;
+
+            // Obtener los tipos de café seleccionados
+            var cafes = [];
+            var checkboxes = document.getElementsByName("cafe");
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    cafes.push(checkbox.value);
+                }
+            });
+
+            // Crear una cookie para recordar las preferencias del usuario
+            document.cookie = "nombre=" + encodeURIComponent(nombre) + "; habitacion=" + encodeURIComponent(habitacion) + "; cafes=" + encodeURIComponent(cafes.join(','));
+
+            alert("Su café será enviado a la habitación " + habitacion + ". Gracias, " + nombre + "!");
+        </script>
+</body>
+</html>
