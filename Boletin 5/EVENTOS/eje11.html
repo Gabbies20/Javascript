@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Eventos Blur</title>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <form>
+    <label for="password1">Contraseña 1:</label>
+    <input type="password" id="password1">
+
+    <label for="password2">Contraseña 2:</label>
+    <input type="password" id="password2">
+
+    <button type="button" onclick="submitForm()">Enviar</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      alert('Formulario enviado correctamente');
+    }
+
+    function checkInput(event) {
+      const input = event.target;
+
+      if (input.value.trim() === '') {
+        alert('Por favor, introduce algo en el campo.');
+        input.focus();
+      }
+    }
+
+    const password1 = document.getElementById('password1');
+    const password2 = document.getElementById('password2');
+
+    password1.addEventListener('blur', checkInput);
+    password2.addEventListener('blur', checkInput);
+  </script>
+
+</body>
+</html>

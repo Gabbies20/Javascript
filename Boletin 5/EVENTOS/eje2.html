@@ -35,54 +35,54 @@
 
 <body>
     <h1>FORMULARIO DE ACCESO:</h1>
-    <form action="">
+    <form action="" id="miFormulario">
         <label for="nombre">Nombre</label>
         <br>
-        <input type="text" placeholder="  Nombre " id="nombre"> <input type="text" placeholder=" Apellidos " required
+        <input type="text" placeholder="  Nombre " id="nombre"> <input type="text" placeholder=" Apellidos "
             id="apellidos">
         <br>
         <label for="usuario">Nombre de Usuario</label>
         <br>
-        <input type="text" placeholder="@gmail.com" required id="usuario">
+        <input type="text" placeholder="@gmail.com"  id="usuario">
         <br>
         <label for="contrasena">Contraseña</label>
         <br>
-        <input type="password" placeholder="" pattern="[a-zA-Z0-9!­*$%]+" required id="contrasena">
+        <input type="password" placeholder=""  id="contrasena">
         <br>
         <label for="fechaNAc">Fecha de nacimiento</label>
         <br>
         <label for="diaNac">Día</label>
-        <input class="inputsito" type="text" placeholder="Día" required id="diaNac">
+        <input class="inputsito" type="text" placeholder="Día"  id="diaNac">
         <label for="mesNac">Mes</label>
-        <select class="inputsito" required id="mesNac">
+        <select class="inputsito"  id="mesNac">
             <option value="enero">Enero</option>
             <option value="febrero">Febrero</option>
             <!-- Agrega las demás opciones de meses según tu necesidad -->
         </select>
         <label for="anioNac">Año</label>
-        <input class="inputsito" type="text" placeholder="Año" required id="anioNac">
+        <input class="inputsito" type="text" placeholder="Año"  id="anioNac">
         <!--Campo nuevo para mostrar la edad: -->
         <input class="inputsito"type="text" id="edadUsuario" disabled placeholder="edad">
         <br>
         <label for="sexo">Sexo</label>
         <br>
-        <select required id="sexo">
+        <select  id="sexo">
             <option value="hombre">Hombre</option>
             <option value="mujer">Mujer</option>
         </select>
         <br>
         <label for="numeroMovil">Teléfono móvil</label>
         <br>
-        <select required id="codigoPais">
+        <select  id="codigoPais">
             <option value="+1">🇺🇸 +1 </option>
             <option value="+44">🇬🇧 +44</option>
             <!-- Agrega las demás opciones de códigos de país según tu necesidad -->
         </select>
-        <input type="text" placeholder="Número de teléfono" required id="numeroMovil">
+        <input type="text" placeholder="Número de teléfono"  id="numeroMovil">
         <br>
         <label for="correo">Tu dirección de correo electrónico actual</label>
         <br>
-        <input type="text" required id="correo">
+        <input type="text" id="correo">
         <br>
         <button id="enviar">Enviar</button>
     </form>

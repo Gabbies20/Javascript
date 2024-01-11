@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación On-the-Fly</title>
+</head>
+<body>
+
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <span id="mensajeNombre" style="color: red;"></span><br>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required>
+        <span id="mensajeCorreo" style="color: red;"></span><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        // Función de validación para el nombre
+        function validarNombre() {
+            var nombreInput = document.getElementById('nombre');
+            var mensajeNombre = document.getElementById('mensajeNombre');
+
+            if (nombreInput.value.length < 3) {
+                mensajeNombre.textContent = 'El nombre debe tener al menos 3 caracteres.';
+            } else {
+                mensajeNombre.textContent = '';
+            }
+        }
+
+        // Función de validación para el correo electrónico
+        function validarCorreo() {
+            var correoInput = document.getElementById('correo');
+            var mensajeCorreo = document.getElementById('mensajeCorreo');
+
+            // Validación simple para un correo electrónico
+            var correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!correoRegExp.test(correoInput.value)) {
+                mensajeCorreo.textContent = 'Ingresa un correo electrónico válido.';
+            } else {
+                mensajeCorreo.textContent = '';
+            }
+        }
+
+        // Agregar event listeners a los campos de texto
+        document.getElementById('nombre').addEventListener('input', validarNombre);
+        document.getElementById('correo').addEventListener('input', validarCorreo);
+
+        // Agregar event listener al formulario para evitar la acción predeterminada si hay errores
+        document.getElementById('miFormulario').addEventListener('submit', function (event) {
+            var mensajeNombre = document.getElementById('mensajeNombre');
+            var mensajeCorreo = document.getElementById('mensajeCorreo');
+
+            // Validar antes de enviar el formulario
+            validarNombre();
+            validarCorreo();
+
+            // Evitar la acción predeterminada si hay errores
+            if (mensajeNombre.textContent || mensajeCorreo.textContent) {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con Conversión a Minúsculas</title>
+  <style>
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="miFormulario">
+    <label for="miTexto">Introduce texto:</label>
+    <input type="text" id="miTexto">
+
+    <button type="button" onclick="convertirAMinusculas()">Convertir a Minúsculas</button>
+  </form>
+
+  <script>
+    function convertirAMinusculas() {
+      const inputTexto = document.getElementById('miTexto');
+      if (inputTexto.value.trim() !== '') {
+        inputTexto.value = inputTexto.value.toLowerCase();
+      }else{
+        alert('El texto esta vacio.')
+      }
+    }
+
+    document.getElementById('miTexto').addEventListener('blur', convertirAMinusculas);
+  </script>
+
+</body>
+</html>

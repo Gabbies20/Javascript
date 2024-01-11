@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Focus en JavaScript</title>
+</head>
+<body>
+
+  <form>
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password">
+
+    <button type="button" onclick="submitForm()">Enviar</button>
+  </form>
+
+  <script>
+    function submitForm() {
+      alert('Formulario enviado correctamente');
+    }
+
+    document.getElementById('password').addEventListener('blur', function(event) {
+      const input = event.target;
+
+      if (input.value.trim() === '') {
+        alert('Por favor, introduce algo en el campo.');
+        input.focus();  // Devuelve el foco al campo de contraseña
+      }
+    });
+  </script>
+
+</body>
+</html>

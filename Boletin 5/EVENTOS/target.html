@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body onclick="myFunction(event)" style="border:1px solid black;Padding:8px">
+<h1>HTML DOM Events</h1>
+<h2>The currentTarget Property</h2>
+
+<p>Click on any elements in this document to find out which element triggered the onclick event.</p>
+
+<button>This is a button</button>
+
+<p>The target property does not return the element that was clicked on, but the element which triggered the event.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(event) {
+  let text = event.currentTarget.tagName;
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>

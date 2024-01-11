@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Blur</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text" id="miInput">
+        <script>
+            var miInput = document.getElementById("miInput");
+
+            miInput.addEventListener("blur", function () {
+                console.log("El input ha perdido el foco.");
+            });
+
+        </script>
+</body>
+
+</html>
