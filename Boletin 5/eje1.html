@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        form {
+            border: 1px solid black;
+            width: 50%;
+        }
+
+        input,
+        select {
+            /*width: calc(50% - 8px); Ajusta el ancho del input teniendo en cuenta el borde */
+            /* margin: 4px; Espaciado interno para el input */
+
+
+        }
+
+        .inputsito {
+            width: calc(20.33% - 8px);
+            /* Divide la línea en 3 partes iguales para día, mes y año */
+            margin: 4px;
+        }
+    </style>
+    <script src="eje2.js"></script>
+</head>
+
+<body>
+    <h1>FORMULARIO DE ACCESO:</h1>
+    <form action="">
+        <label for="nombre">Nombre</label>
+        <br>
+        <input type="text" placeholder="  Nombre " id="nombre"> <input type="text" placeholder=" Apellidos " required
+            id="apellidos">
+        <br>
+        <label for="usuario">Nombre de Usuario</label>
+        <br>
+        <input type="text" placeholder="@gmail.com" required id="usuario">
+        <br>
+        <label for="contrasena">Contraseña</label>
+        <br>
+        <input type="password" placeholder="" pattern="[a-zA-Z0-9!­*$%]+" required id="contrasena">
+        <br>
+        <label for="fechaNAc">Fecha de nacimiento</label>
+        <br>
+        <label for="diaNac">Día</label>
+        <input class="inputsito" type="text" placeholder="Día" required id="diaNac">
+        <label for="mesNac">Mes</label>
+        <select class="inputsito" required id="mesNac">
+            <option value="enero">Enero</option>
+            <option value="febrero">Febrero</option>
+            <!-- Agrega las demás opciones de meses según tu necesidad -->
+        </select>
+        <label for="anioNac">Año</label>
+        <input class="inputsito" type="text" placeholder="Año" required id="anioNac">
+        <!--Campo nuevo para mostrar la edad: -->
+        <input class="inputsito"type="text" id="edadUsuario" disabled placeholder="edad">
+        <br>
+        <label for="sexo">Sexo</label>
+        <br>
+        <select required id="sexo">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+        </select>
+        <br>
+        <label for="numeroMovil">Teléfono móvil</label>
+        <br>
+        <input type="text" placeholder="Número de teléfono" required id="numeroMovil">
+        <select required id="codigoPais">
+            <option value="+1">🇺🇸 +1 (United States)</option>
+            <option value="+44">🇬🇧 +44 (United Kingdom)</option>
+            <!-- Agrega las demás opciones de códigos de país según tu necesidad -->
+        </select>
+        <br>
+        <label for="correo">Tu dirección de correo electrónico actual</label>
+        <br>
+        <input type="text" required id="correo">
+        <br>
+        <button id="enviar">Enviar</button>
+    </form>
+
+</body>
+
+</html>
