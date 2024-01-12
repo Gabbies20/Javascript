@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form id="contacto">
+        <label for="">Nombre</label>
+        <input name="Nombre" type="text" pattern="\w([aA-zZ]|[0-9]|[!]|[*]|[$]|[%])*">
+        <label>Apellido</label>
+        <input name="Apellido" type="text" pattern="\w([aA-zZ]|[0-9]|[!]|[*]|[$]|[%])*">
+        <br>
+        <label>Nombre de usuario</label>
+        <input name="Nombre de usuario"  type="text" pattern="\w([aA-zZ]|[0-9]|[!]|[*]|[$]|[%])*">
+        <br>
+        <label for="mail">Contraseña</label>
+        <input name="Contraseña"  type="text" id="mail" pattern="\w([aA-zZ]|[0-9]|[!]|[*]|[$]|[%])*">
+        <br>
+        <label>Confirma tu contraseña</label>
+        <input name="Confirmar contraseña" type="text" pattern="\w([aA-zZ]|[0-9]|[!]|[*]|[$]|[%])*"> 
+        <br>
+        <P>Fecha de nacimiento</P>
+        <label >Dia</label>
+        <input id="dia" name="Dia" type="number" pattern="([0-2][0-9] |[3][0-1])">
+
+        <select name="Mes" id="mes">
+            <option value="0">Enero</option>
+            <option value="1">Febrero</option>
+            <option value="2">Marzo</option>
+            <option value="3">Abril</option>
+            <option value="4">Mayo</option>
+            <option value="5">Junio</option>
+            <option value="6">Julio</option>
+            <option value="7">Agosto</option>
+            <option value="8">Septimbre</option>
+            <option value="9">Octubre</option>
+            <option value="10">Noviembre</option>
+            <option value="11">Diciembre</option>
+        </select>
+        
+        <label>Año</label>
+        <input id="año" name="Año" type="text">
+        <span>  Años: <span id="edad">0</span></span>
+        <br>
+        <select name="Sexo">
+            <option >Hombre</option>
+            <option >Mujer</option>
+        </select>
+        <br>
+        <label for="">Telefono movil</label>
+        <input type="tel" name="Telefono" id="" pattern="([0-9]{9})">
+        <br>
+        <label for="">Tu direccion de correo actual</label>
+        <input type="text" name="Correo" pattern="([Aa-zZ]|[0-9])*@gmail.com">
+
+        <input id="submit" type="button" value="Buscar" onclick="mostrarElementos()">
+    </form>
+
+    <p id="contenido"></p>
+    <script src="2.js"></script>
+</body>
+</html>
