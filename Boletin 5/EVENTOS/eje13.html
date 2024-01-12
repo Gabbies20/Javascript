@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulario con Conversión a Minúsculas</title>
+  <script src="eje13.js"></script>
   <style>
     label {
       display: block;
@@ -17,21 +18,13 @@
     <label for="miTexto">Introduce texto:</label>
     <input type="text" id="miTexto">
 
-    <button type="button" onclick="convertirAMinusculas()">Convertir a Minúsculas</button>
+    <button type="button" id="enviar">Convertir a Minúsculas</button>
+
+    <p id="resultado"></p>
+
   </form>
 
-  <script>
-    function convertirAMinusculas() {
-      const inputTexto = document.getElementById('miTexto');
-      if (inputTexto.value.trim() !== '') {
-        inputTexto.value = inputTexto.value.toLowerCase();
-      }else{
-        alert('El texto esta vacio.')
-      }
-    }
-
-    document.getElementById('miTexto').addEventListener('blur', convertirAMinusculas);
-  </script>
+  
 
 </body>
 </html>
