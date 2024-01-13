@@ -19,7 +19,7 @@ window.addEventListener('load', () => {
         var correo = document.getElementById('correo').value.toUpperCase();
 
 
-        //Vamos a calcular la edad del usuario:
+        //Vamos a calcular la edad del usuario:/*  */
         let mesNacInt = parseInt(mesNac);
 
         let fechaNac = new Date(anioNac,mesNacInt ,diaNac);
