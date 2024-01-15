@@ -66,7 +66,28 @@ function iniciar() {
     }
     function imagenesOcultar(ev){
 
-        ev.currentTarget.style.display = 'none';
+        var imagen = ev.currentTarget;
+        var padreImagen = imagen.parentNode;
+        var hijosChildren = [...padreImagen.childNodes].filter((h) => {
+            r = h != imagen;
+            return r;
+        })
+
+        
+        console.log(hijosChildren);
+
+
+        //ev.currentTarget.style.display = 'none';
+
+        for(e of hijosChildren){
+            //e.style.display = 'none';
+            if(e.style.display != 'none'){
+                e.style.display = 'none';
+            }else{
+                e.style.display = 'block';
+            }
+        }
+
     }
 
 }
