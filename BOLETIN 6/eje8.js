@@ -9,16 +9,16 @@
 
  */
 
-window.addEventListener('load',inicio);
+window.addEventListener('load', iniciar);
 
 
-function inicio(){
+function iniciar() {
 
 
     var datosJson = [
-        {src:"/img/img1.jpg", desc: "descripcion1", specs: ["spec11", "spec12"]},
-        {src:"/img/img2.jpg", desc: "descripcion2", specs: ["spec21", "spec22"]},
-        ];
+        { src: "django.jpg", desc: "descripcion1", specs: ["spec11", "spec12"] },
+        { src: "js.png", desc: "descripcion2", specs: ["spec21", "spec22"] },
+    ];
 
 
     var div = document.getElementById('todos-los-viajes');
@@ -26,14 +26,15 @@ function inicio(){
     div.appendChild(ul);
     console.log(div.title);
 
-    for (e of datosJson ){
+    for (e of datosJson) {
         console.log(e);
         var li = document.createElement('li');
         ul.appendChild(li)
 
         var img = document.createElement('img');
         img.src = e.src;
-        li.appendChild(img)
+        img.width = "250";
+        li.appendChild(img);
 
         var p = document.createElement('p');
         var contenido = document.createTextNode(e.desc);
@@ -41,15 +42,35 @@ function inicio(){
         li.appendChild(p)
 
         var ul2 = document.createElement('ul');
-        for(i of e.specs){
+        //La lista contiene una nueva lista:
+        li.appendChild(ul2)
+        for (i of e.specs) {
             var li = document.createElement('li')
-            
+            //crear la clase para mi etiqueta li:
+            ul2.setAttribute('class', 'specs')
+            ul2.appendChild(li);
+            var contenido = document.createTextNode(i);
+            li.appendChild(contenido)
+
         }
 
+        
+
     }
+
+    var imagenes = document.getElementsByTagName('img');
+    
+    for(var i = 0; i < imagenes.length; i++){
+        console.log(i);
+        imagenes[i].addEventListener('click',imagenesOcultar);
+    }
+    function imagenesOcultar(ev){
+
+        ev.currentTarget.style.display = 'none';
+    }
+
 }
 
 
 
 
-    
