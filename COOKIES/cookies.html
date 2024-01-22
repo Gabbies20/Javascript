@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Cookies</title>
+</head>
+<body>
+
+    <h2>Manejo de Cookies</h2>
+    
+    <button onclick="guardarCookie()">Guardar Cookie</button>
+    <button onclick="leerCookie()">Leer Cookie</button>
+    <button onclick="eliminarCookie()">Eliminar Cookie</button>
+
+    <script>
+        // Función para guardar una cookie
+        function guardarCookie() {
+            document.cookie = "usuario=John Doe; expires=Thu, 31 Dec 2024 12:00:00 UTC; path=/";
+            alert("Cookie guardada");
+        }
+
+        // Función para leer una cookie
+        function leerCookie() {
+            const cookie = document.cookie;
+            alert("Contenido de la cookie: " + cookie);
+        }
+
+        // Función para eliminar una cookie
+        function eliminarCookie() {
+            document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            alert("Cookie eliminada");
+        }
+    </script>
+
+</body>
+</html>

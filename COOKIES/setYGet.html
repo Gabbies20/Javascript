@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Set y Get Cookies</title>
+</head>
+<body>
+
+    <h2>Set y Get Cookies</h2>
+    
+    <button onclick="guardarCookie()">Guardar Cookie</button>
+    <button onclick="leerCookie()">Leer Cookie</button>
+
+    <script>
+        function setCookie(nombre, valor, diasExpiracion) {
+            const fechaExpiracion = new Date();
+            fechaExpiracion.setDate(fechaExpiracion.getDate() + diasExpiracion);
+
+            const cookieString = `${nombre}=${valor}; expires=${fechaExpiracion.toUTCString()}; path=/`;
+            document.cookie = cookieString;
+        }
+
+        function getCookie(nombre) {
+            const cookies = document.cookie.split(';');
+            for (const cookie of cookies) {
+                const [cookieNombre, cookieValor] = cookie.trim().split('=');
+                if (cookieNombre === nombre) {
+                    return cookieValor;
+                }
+            }
+            return null; // La cookie no se encontró
+        }
+
+        function guardarCookie() {
+            setCookie('usuario', 'Gabriela', 7); // Guardar una cookie llamada 'usuario' que expirará en 7 días
+            alert('Cookie guardada');
+        }
+
+        function leerCookie() {
+            const valorUsuario = getCookie('usuario');
+            if (valorUsuario) {
+                alert(`Valor de la cookie 'usuario': ${valorUsuario}`);
+            } else {
+                alert("La cookie 'usuario' no existe");
+            }
+        }
+    </script>
+
+</body>
+</html>
