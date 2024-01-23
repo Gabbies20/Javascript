@@ -16,6 +16,7 @@
         function setCookie(nombre, valor, diasExpiracion) {
             const fechaExpiracion = new Date();
             fechaExpiracion.setDate(fechaExpiracion.getDate() + diasExpiracion);
+            
 
             const cookieString = `${nombre}=${valor}; expires=${fechaExpiracion.toUTCString()}; path=/`;
             document.cookie = cookieString;

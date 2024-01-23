@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de Cookie</title>
+</head>
+<body>
+
+<script>
+  // Aquí insertarías las funciones setCookie, getCookie y checkCookie
+
+  // Copia y pega las funciones setCookie, getCookie y checkCookie aquí
+// Esta función se utiliza para establecer una cookie.
+function setCookie(cname, cvalue, exdays) {
+    // Se crea un nuevo objeto de fecha.
+    const d = new Date();
+  
+    // Se establece la fecha de vencimiento de la cookie sumando el número de días especificado.
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  
+    // Se crea la cadena de expiración para la cookie.
+    let expires = "expires=" + d.toUTCString();
+  
+    // Se establece la cookie utilizando el nombre, valor y fecha de vencimiento.
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  // Esta función se utiliza para obtener el valor de una cookie por su nombre.
+  function getCookie(cname) {
+    // Se crea una cadena que contiene el nombre de la cookie seguido de "=".
+    let name = cname + "=";
+  
+    // Se divide la cadena de cookies en un array usando ";" como delimitador.
+    let ca = document.cookie.split(';');
+  
+    // Se itera sobre el array de cookies.
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+  
+      // Se eliminan los espacios en blanco al principio de la cadena.
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+  
+      // Si la cadena comienza con el nombre de la cookie, se devuelve el valor de la cookie.
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+  
+    // Si no se encuentra la cookie, se devuelve una cadena vacía.
+    return "";
+  }
+  
+  // Esta función se utiliza para verificar si existe una cookie con el nombre "username".
+  function checkCookie() {
+    // Se obtiene el valor de la cookie "username".
+    let user = getCookie("username");
+  
+    // Se verifica si la cookie tiene un valor.
+    if (user != "") {
+      // Si la cookie tiene un valor, se muestra un mensaje de bienvenida.
+      alert("¡Bienvenido nuevamente, " + user + "!");
+    } else {
+      // Si la cookie no tiene un valor, se solicita al usuario que ingrese su nombre.
+      user = prompt("Por favor, ingrese su nombre:", "");
+  
+      // Si el usuario ingresa un nombre y no lo deja en blanco, se establece la cookie con el nombre "username".
+      if (user != "" && user != null) {
+        setCookie("username", user, 365);
+      }
+    }
+  }
+  
+  // Verifica la cookie cuando la página se carga
+  window.onload = function() {
+    checkCookie();
+  };
+</script>
+
+</body>
+</html>

@@ -88,7 +88,13 @@ function iniciar() {
             }
         }
 
+
     }
+
+    var example = document.getElementById('exampleId');
+example.textContent = '<a href="https://google.com">google</a>';
+//output: <a href="http://google.com">google</a>
+example.innerHTML = '<a href="https://google.com">google</a>';
 
 }
 

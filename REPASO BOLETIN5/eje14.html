@@ -6,8 +6,29 @@
     <title>Cookies - Ejercicio 14</title>
 </head>
 <body>
-    <form action="">
-        
+    <form id="coffeeForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+      
+        <label for="habitacion">Número de Habitación:</label>
+        <input type="text" id="habitacion" name="habitacion" required>
+      
+        <p>Seleccione su tipo de café favorito:</p>
+      
+        <input type="checkbox" id="espresso" name="cafe" value="Espresso">
+        <label for="espresso">Espresso</label>
+      
+        <input type="checkbox" id="cappuccino" name="cafe" value="Cappuccino">
+        <label for="cappuccino">Cappuccino</label>
+      
+        <input type="checkbox" id="moka" name="cafe" value="Moka">
+        <label for="moka">Moka</label>
+      
+        <!-- Agrega más tipos de café según sea necesario -->
+      
+        <br>
+      
+        <button type="submit">Enviar Pedido</button>
     </form>
 </body>
 </html>
