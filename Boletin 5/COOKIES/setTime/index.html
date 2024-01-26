@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Crear un objeto Date
+let miFecha = new Date();
+console.log(`Variabel miFecha: ${miFecha}`)
+
+
+// Obtener la fecha y hora actual en milisegundos desde la época
+let tiempoActual = miFecha.getTime();
+console.log(`Variable tiempoActual: ${tiempoActual}`);
+
+
+// Añadir una hora (en milisegundos) al tiempo actual
+let nuevaHora = tiempoActual + 3600000; // 3600000 milisegundos equivalen a 1 hora
+console.log(`Nueva hora antes de aplicar el método setTIme: ${nuevaHora}`)
+
+
+// Establecer la nueva fecha y hora usando setTime
+miFecha.setTime(nuevaHora);
+
+console.log(miFecha);
+
+    </script>
+</body>
+</html>

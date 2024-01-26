@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Café</title>
+    <script src="eje1.js"></script>
 </head>
 <body>
     <h1>Orden de Café</h1>
@@ -27,29 +28,8 @@
         <!-- Agrega más tipos de café según sea necesario -->
 
         <br><br>
-        <button type="button" onclick="ordenarCafe()">Ordenar Café</button>
+        <button type="button" id="boton">Ordenar Café</button>
     </form>
 
-    <script>
-        function ordenarCafe() {
-            // Obtener los valores del formulario
-            var nombre = document.getElementById("nombre").value;
-            var habitacion = document.getElementById("habitacion").value;
-
-            // Obtener los tipos de café seleccionados
-            var cafes = [];
-            var checkboxes = document.getElementsByName("cafe");
-            checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    cafes.push(checkbox.value);
-                }
-            });
-
-            // Crear una cookie para recordar las preferencias del usuario
-            document.cookie = "nombre=" + encodeURIComponent(nombre) + "; habitacion=" + encodeURIComponent(habitacion) + "; cafes=" + encodeURIComponent(cafes.join(','));
-
-            alert("Su café será enviado a la habitación " + habitacion + ". Gracias, " + nombre + "!");
-        }
-        </script>
 </body>
 </html>

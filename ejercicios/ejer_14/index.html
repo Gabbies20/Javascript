@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="archivo.js"></script>
+    <title>Ejercicio 14</title>
+    <style>
+        .contenedor {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #333;
+            margin: 20px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .elemento {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            position: absolute;
+            cursor: move;
+        }
+
+        #papelera {
+            width: 100px;
+            height: 100px;
+            background-color: #e74c3c;
+            border: 2px solid #333;
+            margin: 20px;
+            display: inline-block;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+
+
+    <div id="contenedor1" class="contenedor" ondrop="soltar(event, 'contenedor1')" ondragover="permitirSoltar(event)">
+        <div id="elemento1" class="elemento" draggable="true" ondragstart="iniciarArrastre(event, 'elemento1')"></div>
+        <div id="elemento2" class="elemento" draggable="true" ondragstart="iniciarArrastre(event, 'elemento2')"></div>
+    </div>
+    
+    <div id="contenedor2" class="contenedor" ondrop="soltar(event, 'contenedor2')" ondragover="permitirSoltar(event)"></div>
+    
+    <div id="contenedor3" class="contenedor" ondrop="soltar(event, 'contenedor3')" ondragover="permitirSoltar(event)"></div>
+    
+    <div id="contenedor4" class="contenedor" ondrop="soltar(event, 'contenedor4')" ondragover="permitirSoltar(event)"></div>
+    
+    <div id="papelera" ondrop="eliminarElemento(event)" ondragover="permitirSoltar(event)">
+        Papelera
+    </div>
+    
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orden de Café</title>
+</head>
+<body>
+    <h1>Orden de Café</h1>
+    <form id="coffeeForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" required>
+
+        <label for="roomNumber">Número de Habitación:</label>
+        <input type="text" id="roomNumber" required>
+
+        <p>Seleccione su tipo de café:</p>
+        <input type="checkbox" id="espresso" value="Espresso" name="cafe"> <label for="espresso">Espresso</label><br>
+        <input type="checkbox" id="cappuccino" value="Cappuccino" name="cafe"> <label for="cappuccino">Cappuccino</label><br>
+        <input type="checkbox" id="mocha" value="Moka" name="cafe"> <label for="mocha">Moka</label><br>
+        <!-- Agrega más tipos de café según sea necesario -->
+        <br>
+        <input type="submit" id="boton" value="Enviar">
+    </form>
+    <script src="archivo.js"></script>
+</body>
+</html>
